@@ -10,7 +10,7 @@ function Player(_firstname, _lastname, _username, _phoneNumber, _city, _email, _
     this.bet = 0;
 
     this.makeBet = function(amt) { 
-        if (amt != "") {
+        if (amt !== "") {
             if (isNaN(parseInt(amt))) {// isNaN
                 alert(`${amt} is not a number`);
             }
@@ -71,10 +71,10 @@ function Computer() {
         if (AI.gameMode === "") {
             alert("Please choose one of the game modes (PLAY, Reverse, W>L or L>W)");
         }
-        else if (player.bet != 0 || player.bet != "") {
+        else if (player.bet !== 0 || player.bet !== "") {
             if (AI.gameMode === "PLAY") {
                 if (betCard.rank === hand.winningCard.rank && betCard.rank === hand.losingCard.rank) {
-                    player.updateBank(parseInt(player.bet*0.5));
+                    player.updateBank(player.bet*0.5);
                     console.log(`AI took the half! ($${player.bet})`);
                     console.log(player.bank);
                     player.bet = 0;
@@ -94,7 +94,7 @@ function Computer() {
                         return true;
                     }
                     else {
-                        player.updateBank(parseInt(0-player.bet));
+                        player.updateBank(0-player.bet);
                         player.bet = 0;
                         this.changeBtnColor("#btnPlay","black");
                         hand.displayOutcome('lost');
@@ -123,7 +123,7 @@ function Computer() {
                         return null;
                     }
                     else {
-                        player.updateBank(parseInt(0-player.bet));
+                        player.updateBank(0-player.bet);
                         player.bet = 0;
                         this.changeBtnColor("#btnPlay","black");
                         hand.displayOutcome('lost');
@@ -134,7 +134,7 @@ function Computer() {
             }
             else if (AI.gameMode === "Reverse") {
                 if (hand.winningCard.rank === hand.losingCard.rank === betCard.rank) {
-                    player.updateBank(parseInt(player.bet*0.5));
+                    player.updateBank(player.bet*0.5);
                     console.log(`AI took the half! ($${player.bet})`);
                     console.log(player.bank);
                     player.bet = 0;
@@ -170,7 +170,7 @@ function Computer() {
                         return true;
                     }
                     else {
-                        player.updateBank(parseInt(0-player.bet));
+                        player.updateBank(0-player.bet);
                         player.bet = 0;
                         this.changeBtnColor("#btnReverse","black");
                         hand.displayOutcome('lost');
@@ -187,7 +187,7 @@ function Computer() {
                         return null;
                     }
                     else {
-                        player.updateBank(parseInt(0-player.bet));
+                        player.updateBank(0-player.bet);
                         player.bet = 0;
                         this.changeBtnColor("#btnReverse","black");
                         hand.displayOutcome('lost');
@@ -202,7 +202,7 @@ function Computer() {
         }   
     }
     this.higherLower = function() {
-        if (AI.gameMode == "W>L") {
+        if (AI.gameMode === "W>L") {
             if (hand.winningCard.value > hand.losingCard.value) {
                 player.updateBank(player.bet*2);
                 player.bet = 0;
@@ -224,7 +224,7 @@ function Computer() {
                 return false;
             }
             else if (hand.winningCard.value === hand.losingCard.value) {
-                player.updateBank(parseInt(player.bet*0.5));
+                player.updateBank(player.bet*0.5);
                 console.log(`AI took the half! ($${player.bet})`);
                 console.log(player.bank);
                 player.bet = 0;
@@ -235,7 +235,7 @@ function Computer() {
                 return null;
             }
         }
-        else if (AI.gameMode == "L>W") {
+        else if (AI.gameMode === "L>W") {
             if (hand.winningCard.value < hand.losingCard.value) {
                 player.updateBank(player.bet*2);
                 player.bet = 0;
@@ -257,7 +257,7 @@ function Computer() {
                 return false;
             }
             else if (hand.winningCard.value === hand.losingCard.value) {
-                player.updateBank(parseInt(player.bet*0.5));
+                player.updateBank(player.bet*0.5);
                 console.log(`AI took the half! ($${player.bet})`);
                 console.log(player.bank);
                 player.bet = 0;
