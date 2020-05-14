@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@800&display=swap');
+
+:root {
+    --red: #d61e1e;
+}
+
+
+body {
+    font-family: 'Baloo Bhaina 2', cursive;
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    margin: 0 auto;
+    text-align: center;
+    background-color: #fff;
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/game.css">
+    <title>Pharaoh's Faro</title>
+</head>
+<body>
+    <header class="logo">
+        <a href="intro.html"><img src="./images/pharaoh's_casino_logo.png" alt="Pharaoh's Casino logo"></a>
+    </header>
+    <div class="container">
+        <div class="welcome">
+            Welcome back, <span id="username"></span> aka <span id="fullName"></span> (<span id="email"></span>).<br>Your phone number is: <span id="phoneNum"></span> and you live in <span id="city"></span>.<br>Your last visit was <span id="lastVisit"></span>.<br><br>Not <span id="fullName"></span>? <a id="changeCreds" class="changeCreds">Change your Credentials</a>
+        </div><!--welcome-->
+    </div><!--container-->
+    <div class="warning-message">
+        ⚠️<br>This page works only on landscape mode, so just turn your device if you're on mobile or expand your browser window if you're using a pc.
+    </div>
+    
+    <div class="game-container" id="game-container">
+        
+        <div class=".top-buttons moneyRemaining-container">
+            <input type="button" class="top-btn" id="exitGame" value="Exit Game">
+            <div class="moneyRemaining">
+                <a href="#game-container"><span class="AH-red">$</span><span id="moneyRemaining"></span></a>
+            </div><!-- moneyRemaining -->
+            <input type="button" class="top-btn" id="openPlayedCards" value="Cards already played">
+        </div><!-- .top-buttons moneyRemaining-container -->
+
+        <div class="played-cards-box">
+            <span class="box-text">These cards have already been played</span>
+            <div class="close" id="playedCardsClose">&times;</div>
+            <div id="playedCards"></div>
+        </div>
+        
+        <div class="message-box">    
+            <div class="close" id="msgBox">&times;</div>
+            <div class="result"></div>
+            <div id="message">
+                <div id="comments">(but you still keep half of your bet)</div>
+                <table>
+                    <tr>
+                        <th>Discarded Card</th>
+                        <th>Your Card</th>
+                        <th>Winning Card</th>
+                        <th>Losing Card</th>
+                    </tr>
+                    <tr>
+                        <td id="discardedCard"></td>
+                        <td id="yourCard"></td>
+                        <td id="winningCard"></td>
+                        <td id="losingCard"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <div class="game-space">
+            <div class="game">
+                <span class="spades"></span>
+            </div>            
+            <div class="bet">
+                <input type="text" id="bet" name="bet" placeholder="Enter your bet here">
+                <input type="button" class="btnPlay" id="btnPlay" value="PLAY">
+                <input type="button" class="btnPlay" id="btnReverse" value="Reverse">
+                <input type="button" class="btnPlay" id="btnWL" value="W>L">
+                <input type="button" class="btnPlay" id="btnLW" value="L>W">
+            </div>
+            
+        </div><!-- game -->
+    </div><!--game-container-->
+    <script src="./js/infoProcessor.js"></script>
+    <script src="./js/game.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
