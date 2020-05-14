@@ -1,2 +1,2 @@
 # Card Game Faro
-Card Game of Faro website with HTML, CSS and JavaScript 
+Card Game of Faro with HTML, CSS and JavaScript 
