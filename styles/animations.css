@@ -1,0 +1,36 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    position: absolute;
+    left: -100px;
+}
+
+body {
+    font-family: "Press Start 2P", Arial;
+    background-color: black;
+    background-image: url(../images/Backgrounds/egyptian-background.jpg);
+    background-size: cover;
+}
+
+canvas {
+    position: relative;
+}
+
+input {
+    font-family: "Press Start 2P";
+    padding: 16px 9px;
+    font-size: 20px;
+    cursor: pointer;
+    border: 2px solid black;
+    position: absolute;
+    background-color: #fff;
+}
+
+.skipBtn {
+    position: relative;
+    z-index: 2;   
+}

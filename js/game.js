@@ -300,7 +300,7 @@ function Computer() {
 
     this.close = function(el) {
         $$("." + el.parentNode.className).style.display = "none";
-        if (el.parentNode.className == "message-box") {
+        if (el.parentNode.className === "message-box") {
             let allTds = document.querySelectorAll("td");
             for(let i = 0; i < allTds.length; i++) {
                 allTds[i].innerHTML = "";
@@ -363,7 +363,7 @@ function Deck() {
     this.createDeck = function() {  
         for (let i = 0; i < suits.length; i++) {
             for (let j = 0; j < ranks.length; j++) {
-                if (i == 1 || i == 3) {
+                if (i === 1 || i === 3) {
                     this.cards[this.cards.length] = new Card(suits[i], ranks[j], "R", j + 1);
                 }               
                 else {          
@@ -475,7 +475,7 @@ function Hand() {
         let winningCardImg = document.createElement("img");
         let losingCardImg = document.createElement("img");
         
-        if (AI.gameMode != "W>L" && AI.gameMode != "L>W") {
+        if (AI.gameMode !== "W>L" && AI.gameMode !== "L>W") {
 
             let yourCard = myBoard.yourCard;
             let yourCardImg = document.createElement("img");
